@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Nuevo Comentario</h1>
+
+  <%= render "form", comment: @comment %>
+
+  <br>
+
+ <div class="container mt-3 text-center">  
+  <%= link_to "Comentar", new_publication_comment_path(@publication), class: "btn btn-secondary" %>
+    <%= link_to "Publicaciones", new_publication_path %>
+  </div>
+</div>

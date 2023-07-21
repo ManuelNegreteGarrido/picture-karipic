@@ -1,0 +1,17 @@
+   
+<div class="container d-flex justify-content-center align-items-center">
+    <div id="<%= dom_id(publication) if publication.present? %>"> 
+          <div class="card w-75">        
+              <div class="card-body">
+                  <% publication.images.each do |image| %>
+                    <%= image_tag image, class: "card-img-top" if image.present? %>
+                  <% end %>          
+                <p class="card-text text-start"> <p><strong></strong><%= publication.description %></p></p> 
+              </div>
+              <div class= "ver_publicacion text-center">
+                <%= link_to "Ver publicación", publication, class: "nav-link" %>    
+              </div>
+          </div>
+     </div>
+</div>
+

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <%= render comment %>
+    <p>
+    <%= link_to "New comment", new_publication_comment_path, method: :get, class: "btn btn btn-secondary text-white mt-3 mb-3" %>
+
+    </p>
+  <% end %>
+</div>
+

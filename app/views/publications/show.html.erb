@@ -1,0 +1,41 @@
+<div class="container d-block justify-content-center align-items-center">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col">
+      <%= render partial: 'publication', locals: { publication: @publication } %>
+      <nav class="nav pt-3 pb-3">
+        <% if user_signed_in? %>
+          <div class="d-flex">
+        
+          </div>
+        <% end %>
+        <% if current_user && (current_user.admin? || current_user.id == @publication.user_id) %>
+          <div class="d-flex">
+            <%= button_to "Eliminar", publication_path(@publication), method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn btn-secondary mt-2 ms-3 me-5" %>
+          </div>
+        <% else %>
+          <p>No estás autorizado para editar o eliminar esta publicación.</p>
+        <% end %>
+      </nav>
+      <div class="card text-bg-tertiary mb-3 mt-5 ms-3" style="max-width: 18rem;">
+        <div class="card-header">Comentarios</div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+            <% @comments.each do |comment| %>
+              <%= render comment %></p>
+              <%= link_to "Ver", publication_comment_path(@publication, comment), class: "nav-link" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+    </div>
+
+    <nav class="nav pt-2 pb-3 ms-5 justify-content-center">
+ <%= link_to "Comentar", new_publication_comment_path(@publication), class: "btn btn-secondary" %>
+    </nav>
+</div>

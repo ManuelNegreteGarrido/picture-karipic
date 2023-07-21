@@ -1,0 +1,29 @@
+<!-- app/views/shared/_navbar.html.erb -->
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3 text-white" href="#">PICTURE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav fs-5">
+          <%= link_to "Home", home_index_path, class: "nav-link text-white" %>
+          <% if user_signed_in? %>
+            <%= link_to "Usuario", edit_user_registration_path, class: "nav-link text-white" %>
+            <% if current_user.admin? %>
+              <%= content_tag :span, class: "nav-link text-white" do %>
+                <%= link_to "Publicaciones", new_publication_path %>
+              <% end %>
+            <% end %>
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link text-white" %>
+          <% else %>
+            <%= link_to "Registrarse", new_user_registration_path, class: "nav-link text-white" %>
+            <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link text-white" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </nav> 
+</div>

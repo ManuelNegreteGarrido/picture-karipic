@@ -1,0 +1,14 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <% if current_user && current_user.image.present? %>
+      <%= image_tag current_user.image, class: 'rounded-circle-comment mb-3' %>
+    <% elsif current_user %>
+      <p>No tienes una imagen de perfil.</p>
+    <% else %>
+      <p>No estás autorizado para ver la imagen del usuario.</p>
+    <% end %>
+    <strong>Content:</strong>
+    <%= comment.content %>
+  </p>
+</div>
+

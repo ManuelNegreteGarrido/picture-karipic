@@ -1,0 +1,17 @@
+<div class="container">
+    <% if user_signed_in? %>  
+        <% if current_user.name %>  
+            <h1>Bienvenido <%= current_user.name %> a PICTUREs</h1>
+            <% else %>
+            <h1>Bienvenido <%= current_user.email%> PICTURE</h1>
+        <% end %>    
+            <p class="subtitulo fs-3">COMENTA LAS FOTOS</p>         
+                            
+
+    <% else %>    
+        <h1>Bienvenido a PICTURE</h1>    
+        <h5>Comenta mis fotos resgitrándote</h5> 
+    <% end %>  
+
+     <%= render partial: 'publications/index', locals: { publication: @publications }  %>
+</div>   

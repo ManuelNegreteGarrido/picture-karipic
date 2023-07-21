@@ -1,0 +1,18 @@
+<%= form_with(model: @comment, url: publication_comments_path(@publication), local: true) do |form| %>
+
+  <div class="container mt-5">
+    <div>
+      <%= image_tag current_user.image, class: 'rounded-circle-comment mb-3'%>
+      <%= form.text_area :content, class:"form-control" %>
+    </div>
+    <div>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div>
+      <%= form.hidden_field :publication_id, value: @publication.id %>
+    </div><br/>
+    <div>
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

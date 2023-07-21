@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<div class= "container-fluid">
+  <div id="notes" class="row row-cols-1 row-cols-md-3 g-4">
+    <% @publications.each do |publication| %> 
+      <div class="col"> 
+        <%= render publication %>          
+      </div>    
+    <% end %>
+  </div> 
+</div>

@@ -1,0 +1,12 @@
+<h1>Editing comment</h1>
+
+<%= render "form", comment: @comment %>
+
+<br>
+
+<div>
+<%= link_to "Show this comment", publication_comment_path(@publication, @comment) %>
+
+<%= link_to "Back to comments", publication_comments_path(@comment.publication) %>
+
+</div>

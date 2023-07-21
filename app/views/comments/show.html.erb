@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @comment %>
+
+<div>
+  <%= link_to "Edit this comment", edit_publication_comment_path(@comment.publication, @comment) %> |
+  <%= link_to "Back to comments", publication_comments_path(@comment.publication) %>
+   <%= link_to "Comentar", new_publication_comment_path(@publication), class: "btn btn-secondary" %>
+</div>

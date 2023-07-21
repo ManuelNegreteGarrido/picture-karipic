@@ -1,0 +1,18 @@
+.rounded-circle {
+    width: 150px;
+    height: 200px;
+  }
+
+.rounded-circle-comment{
+    width: auto;
+    height: 100px;
+      border-radius: 100px;
+} 
+.btn{
+  background-color: rgb(9, 1, 240);
+}
+  
+.navbar{
+  background-color: rgb(4, 15, 234);
+}
+
